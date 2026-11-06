@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>המורה נעלמה! – חדר בריחה לפתיחת לימודי סוציולוגיה</title>
+<meta name="description" content="חדר בריחה לשיעור הראשון בסוציולוגיה: המורה נוגה נעלמה ביום הראשון, חמישה מקומות בעיר, חמישה מושגים וכספת אחת.">
+<meta name="theme-color" content="#23304f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E📰%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/sc-hub.webp?v=2">
+<meta property="og:title" content="המורה נעלמה! – חדר בריחה בסוציולוגיה">
+<meta property="og:description" content="המורה נוגה נעלמה ביום הראשון. חמישה מקומות בעיר, חמישה מושגים וכספת אחת.">
+<meta property="og:image" content="https://inbal5980.github.io/soc-escape-room/og.jpg">
+<link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+<div id="gate" class="gate">
+  <div class="tstrip tstrip-fixed" hidden><span>👩‍🏫 מצב מורה פעיל – התשובות גלויות</span><button type="button" data-t="panel">פאנל מורה</button><button type="button" data-t="exit">יציאה ✕</button></div>
+  <div class="gt-bg" id="gtBg"></div><div class="gt-rays" aria-hidden="true"></div><div class="gt-tint" aria-hidden="true"></div><div class="gt-dust" id="gtDust" aria-hidden="true"></div>
+  <img class="gt-logo" src="img/logo.png" alt="INBAL ARIELY">
+  <div class="gt-in">
+    <div class="gt-hero">
+      <div class="gt-key" aria-hidden="true"><svg viewBox="0 0 100 140"><defs><radialGradient id="gkg" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#fff6c8"/><stop offset=".45" stop-color="#ffd23f"/><stop offset="1" stop-color="#ff8a3d"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="none" stroke="#ffd23f" stroke-width="5" opacity=".9"/><path d="M50 22a22 22 0 0 0-11 41L30 118h40L61 63a22 22 0 0 0-11-41z" fill="url(#gkg)"/></svg></div>
+      <div class="gt-kicker">🔍 חדר בריחה · פתיחת שנה</div>
+      <h1 class="gt-title">חדר בריחה בסוציולוגיה</h1>
+      <div class="gt-sub">המורה נעלמה!</div>
+    </div>
+    <section class="gt-card" aria-labelledby="gtH">
+      <h2 id="gtH">📜 הוראות לחוקרים</h2>
+      <ul class="gt-list">
+        <li><i>👥</i><span>עובדים <b>בקבוצה</b> על מחשב או טלפון אחד</span></li>
+        <li><i>📰</i><span>קוראים את <b>עיתון בית הספר</b> כדי להבין מה קרה למורה נוגה</span></li>
+        <li><i>✨</i><span>בכל מקום מחפשים בסצנה <b>חפצים נוצצים</b> – חלקם רמזים וחלקם הטעיה</span></li>
+        <li><i>🧩</i><span>כל רמז נותן רק <b>חלק מהתשובה</b> – צריך לחבר ביניהם</span></li>
+        <li><i>🔒</i><span>תשובה שגויה <b>נועלת את המנעול ל-15 שניות</b></span></li>
+        <li><i>💡</i><span>רמזי עזרה נפתחים עם הזמן, וכל רמז <b>מוסיף דקה</b> לזמן</span></li>
+        <li><i>🤖</i><span>מותר לחפש באינטרנט ולהיעזר בבינה מלאכותית – אבל <b>החשיבה עליכם</b></span></li>
+        <li><i>🔐</i><span>פותרים <b>5 מקומות</b> ← מקבלים <b>5 מילים ו-5 ספרות</b> ← פותחים את <b>הכספת</b> ומוצאים את נוגה</span></li>
+      </ul>
+    </section>
+    <div class="gt-go"><button id="gateGo" class="gt-btn" type="button">יוצאים לחקירה ▶</button></div>
+    <div class="gt-credit">יצרה: עינבל אריאלי</div>
+  </div>
+</div>
+<div id="start" class="screen" aria-live="polite" hidden></div>
+<div class="tstrip tstrip-fixed tstrip-start" hidden><span>👩‍🏫 מצב מורה פעיל – התשובות גלויות</span><button type="button" data-t="panel">פאנל מורה</button><button type="button" data-t="exit">יציאה ✕</button></div>
+
+<div id="game" hidden>
+  <header id="topbar">
+    <div class="tb-r">
+      <button id="menuBtn" class="ib" type="button" title="מסך הפתיחה" aria-label="מסך הפתיחה">📰</button>
+      <button id="homeBtn" class="ib" type="button" title="חזרה למפה" aria-label="חזרה למפה">🗺️</button>
+      <div id="timer" class="timer" aria-label="שעון"></div>
+    </div>
+    <div id="tray" class="tray" aria-label="מגש המילים והספרות"></div>
+    <div class="tb-l">
+      <button id="tbadge" class="tbadge" type="button" hidden>👩‍🏫 מורה</button>
+      <button id="mute" class="ib" type="button" aria-label="השתקת מוזיקה">🔊</button>
+      <input id="vol" type="range" min="0" max="1" step="0.05" aria-label="עוצמת מוזיקה">
+    </div>
+  </header>
+  <div class="tstrip tstrip-game" hidden><span>👩‍🏫 מצב מורה פעיל – התשובות גלויות</span><button type="button" data-t="panel">פאנל מורה</button><button type="button" data-t="exit">יציאה ✕</button></div>
+  <main id="stage">
+    <section id="view3d" aria-label="סצנה">
+      <div id="scnBg" class="scn-bg"></div>
+      <div id="scnPan" class="scn-pan"><div id="scnPar" class="scn-par"><div id="scnBox" class="scn-box"><div id="scnKb" class="scn-kb"><img id="scnImg" alt="" draggable="false"><div id="spots"></div></div></div></div></div>
+      <div class="scn-vig"></div>
+      <div id="tip" class="tip3d" hidden></div>
+      <div class="drag-hint">חפשו חפצים שמנצנצים</div>
+    </section>
+    <aside id="panel" aria-live="polite"></aside>
+  </main>
+</div>
+
+<div id="modal" hidden>
+  <div id="mcard" class="mcard" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+    <div class="mhead"><h2 id="mtitle"></h2><button id="mclose" class="ib" type="button" aria-label="סגירה">✕</button></div>
+    <div id="mbody"></div>
+  </div>
+</div>
+<div id="clip" hidden>
+  <video id="clipVid" playsinline muted preload="auto"></video>
+  <img id="clipImg" alt="" hidden>
+  <div id="clipCap" class="clip-cap" aria-live="polite"></div>
+  <button id="clipPlay" class="clip-play" type="button" hidden>▶ הפעלת הסרטון</button>
+  <button id="clipSkip" class="clip-skip" type="button">דלגו ⏭</button>
+</div>
+<div id="ending" hidden></div>
+<div id="toast" role="status"></div>
+<div id="print-area"></div>
+<img class="logo" src="img/logo.png" alt="INBAL ARIELY">
+<script type="module" src="app.js?v=7"></script>
+</body>
+</html>
